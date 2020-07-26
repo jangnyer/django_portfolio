@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
+    'portfolio.apps.PortfolioConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'secondproject.urls'
@@ -119,3 +121,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS=[
+        os.path.join(BASE_DIR,'portfolio','static')
+
+]  #static파일들이 현재 어디에 있는지를 쓰는 곳
+
+STATIC_ROOT=os.path.join(BASE_DIR,'static')
+#static파일들이 어디로 모일것인지 쓰는곳
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
